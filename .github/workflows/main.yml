@@ -48,7 +48,7 @@ jobs:
       run: pnpm install --frozen-lockfile
 
     - name: Export static files
-      run: pnpm build && pnpm export  # Creates ./out folder
+      run: pnpm build #&& next export
     
     - name: Deploy to GitHub Pages
       uses: actions/upload-pages-artifact@v4
