@@ -109,6 +109,7 @@ export default function NodeDetailPanel() {
         <div className="border-b border-border px-4 py-4">
           {canEdit ? (
             <input
+              id="node-title-input"
               value={data.title}
               onChange={(e) =>
                 updateNodeData(node.id, { title: e.target.value })
@@ -147,6 +148,7 @@ export default function NodeDetailPanel() {
               return (
                 <button
                   key={state}
+                  id={`state-button-${state}`}
                   disabled={!canEdit}
                   onClick={() => handleStateChange(state)}
                   className={cn(

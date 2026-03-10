@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[59374,["/_next/static/chunks/21b9229d40b74899.js","/_next/static/chunks/f19e4129d752cb5c.js"],"ViewportBoundary"]
+3:I[59374,["/_next/static/chunks/21b9229d40b74899.js","/_next/static/chunks/f19e4129d752cb5c.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"u7p5i2fRAmIxOy6ghSQS0","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0d9488"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"ImpactMap - GPS for Social Impact"}],["$","meta","1",{"name":"description","content":"A visual strategic planning tool that helps community volunteers map goals and determine strategic next steps."}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}

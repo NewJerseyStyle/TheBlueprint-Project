@@ -81,6 +81,8 @@ interface CanvasStoreValue {
   setIsTutorial: (v: boolean) => void
   tutorialStep: number
   setTutorialStep: (v: number) => void
+  interactiveTutorialStep: number
+  setInteractiveTutorialStep: (v: number) => void
   showTutorial: boolean
   setShowTutorial: (v: boolean) => void
 
@@ -161,6 +163,7 @@ export function CanvasStoreProvider({ children }: { children: ReactNode }) {
   // Tutorial
   const [isTutorial, setIsTutorial] = useState(false)
   const [tutorialStep, setTutorialStep] = useState(0)
+  const [interactiveTutorialStep, setInteractiveTutorialStep] = useState(0)
   const [showTutorial, setShowTutorial] = useState(false)
 
   const toggleSubscription = useCallback((type: SubscriptionType) => {
@@ -370,14 +373,13 @@ export function CanvasStoreProvider({ children }: { children: ReactNode }) {
   }, [toggleLaneComments])
 
   const loadTutorialCanvas = useCallback(() => {
-    const swimLanes = TUTORIAL_SWIM_LANES.map((lane) => ({ ...lane }))
-    const strategicNodes = TUTORIAL_NODES.map((node) => ({ ...node }))
-    setNodes([...swimLanes, ...strategicNodes] as Node[])
-    setEdges(TUTORIAL_EDGES.map((e) => ({ ...e })))
+    setNodes([])
+    setEdges([])
     setIsTutorial(true)
     setShowTutorial(true)
     setTutorialStep(0)
-    setHasSeenStartupPrompt(false)
+    setInteractiveTutorialStep(0)
+    setHasSeenStartupPrompt(true)
   }, [setNodes, setEdges])
 
   const loadBlankCanvas = useCallback(() => {
@@ -423,6 +425,8 @@ export function CanvasStoreProvider({ children }: { children: ReactNode }) {
         setIsTutorial,
         tutorialStep,
         setTutorialStep,
+        interactiveTutorialStep,
+        setInteractiveTutorialStep,
         showTutorial,
         setShowTutorial,
         loadTutorialCanvas,

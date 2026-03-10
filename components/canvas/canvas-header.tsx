@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowLeft, Lightbulb, Map } from "lucide-react"
+import { ArrowLeft, Lightbulb, Map, HelpCircle } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { useCanvasStore } from "@/lib/canvas-store"
@@ -20,6 +20,7 @@ export default function CanvasHeader() {
     setShowIntelligence,
     currentRole,
     isTutorial,
+    loadTutorialCanvas,
   } = useCanvasStore()
 
   const roleBadge = ROLE_BADGE[currentRole]
@@ -55,6 +56,15 @@ export default function CanvasHeader() {
 
       {/* Right: intelligence + notifications + profile */}
       <div className="flex items-center gap-2">
+        <button
+          onClick={loadTutorialCanvas}
+          className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+          title="Restart Interactive Tutorial"
+        >
+          <HelpCircle className="h-3.5 w-3.5" />
+          <span className="hidden sm:inline">Tutorial</span>
+        </button>
+
         <button
           onClick={() => setShowIntelligence(!showIntelligence)}
           className={cn(

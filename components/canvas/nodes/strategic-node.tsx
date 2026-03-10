@@ -98,6 +98,7 @@ function StrategicNodeComponent({ id: nodeId, data, selected }: NodeProps) {
 
   return (
     <div
+      data-node-id={nodeId}
       className={cn(
         "group relative w-56 rounded-lg border-2 bg-card shadow-sm transition-all",
         config.borderClass,
@@ -260,6 +261,7 @@ function StrategicNodeComponent({ id: nodeId, data, selected }: NodeProps) {
       {/* Extend button: create a child node */}
       {nodeData.state !== "goal" && nodeData.state !== "history" && !isGhost && (
         <button
+          id={`extend-button-${nodeId}`}
           onClick={(e) => {
             e.stopPropagation()
             window.dispatchEvent(

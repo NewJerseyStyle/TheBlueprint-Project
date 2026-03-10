@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Toaster } from "sonner"
 
 import "./globals.css"
+import "driver.js/dist/driver.css"
 
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })

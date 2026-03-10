@@ -9,7 +9,7 @@ import NodeDetailPanel from "@/components/canvas/node-detail-panel"
 import IntelligencePanel from "@/components/panels/intelligence-panel"
 import TrelloPanel from "@/components/panels/trello-panel"
 import StartupPrompt from "@/components/notifications/startup-prompt"
-import TutorialOverlay from "@/components/canvas/tutorial-overlay"
+import InteractiveTutorial from "@/components/canvas/interactive-tutorial"
 
 function CanvasContent() {
   const searchParams = useSearchParams()
@@ -54,8 +54,8 @@ function CanvasContent() {
       {/* Startup Prompt */}
       <StartupPrompt />
 
-      {/* Tutorial Overlay */}
-      <TutorialOverlay />
+      {/* Interactive Tutorial */}
+      <InteractiveTutorial />
     </>
   )
 }

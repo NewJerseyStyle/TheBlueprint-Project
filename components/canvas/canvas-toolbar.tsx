@@ -93,6 +93,7 @@ export default function CanvasToolbar() {
       {TOOLBAR_NODES.map(({ state, icon: Icon, label, tip }) => (
         <button
           key={state}
+          id={`toolbar-add-${state}`}
           onClick={() => handleAddNode(state)}
           className={cn(
             "flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
@@ -107,6 +108,7 @@ export default function CanvasToolbar() {
       <div className="mx-1 h-5 w-px bg-border" />
 
       <button
+        id="toolbar-add-lane"
         onClick={handleAddSwimLane}
         className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
         title="Add Swim Lane to organize nodes"
